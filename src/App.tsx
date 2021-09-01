@@ -1,3 +1,4 @@
+import { CssBaseline } from '@material-ui/core';
 import React, { Suspense } from 'react';
 import { SWRConfig } from 'swr';
 
@@ -23,6 +24,7 @@ function App() {
             },
           }}
         >
+          <CssBaseline />
           <Routes />
         </SWRConfig>
       </Suspense>
