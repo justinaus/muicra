@@ -9,9 +9,10 @@ export default function PostsPage() {
   return (
     <div>
       PostsPage {posts.length}
-      <Button color="primary" variant="contained">
+      <Button color="primary" variant="contained" className="w-96">
         Hello
       </Button>
+      <p className="text-lg font-semibold">122331</p>
     </div>
   );
 }
