@@ -3,6 +3,7 @@ import React from 'react';
 import { useCallback } from 'react';
 import { useState } from 'react';
 
+import Page from '../components/layouts/Page';
 import { IRadio } from '../components/shared/radio/radio.interface';
 import RadioFormControl from '../components/shared/radio/RadioFormControl';
 import usePosts from '../hooks/usePosts';
@@ -26,7 +27,7 @@ export default function PostsPage() {
   );
 
   return (
-    <div>
+    <Page>
       PostsPage {posts.length}
       <Button color="primary" variant="contained" className="w-96">
         Hello
@@ -38,6 +39,6 @@ export default function PostsPage() {
         selectedId={currentId}
         onChangeRadio={handleChangeRadio}
       />
-    </div>
+    </Page>
   );
 }

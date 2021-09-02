@@ -3,6 +3,7 @@ import React from 'react';
 import { useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
+import Page from '../components/layouts/Page';
 import usePhoto from '../hooks/usePhoto';
 import { RoutePath } from '../utils/enums';
 
@@ -18,13 +19,13 @@ export default function PhotoPage() {
   }, [photoId, push]);
 
   return (
-    <div>
+    <Page>
       <div>albumId: {photo.albumId}</div>
       <div>id: {photo.id}</div>
       <div>title: {photo.title}</div>
       <Button color="primary" variant="contained" onClick={handleClickModify}>
         수정
       </Button>
-    </div>
+    </Page>
   );
 }
