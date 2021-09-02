@@ -11,7 +11,6 @@ function App() {
       <Suspense fallback={<div>Spinner</div>}>
         <SWRConfig
           value={{
-            refreshInterval: 3000,
             suspense: true,
             fetcher: (resource, init) =>
               fetch(resource, init).then((res) => res.json()),
