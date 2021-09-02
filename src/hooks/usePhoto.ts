@@ -1,0 +1,15 @@
+import useSWR from 'swr';
+
+import { IPhoto } from '../interfaces/photo.interface';
+
+export default function usePhoto(id: string) {
+  const { data, error } = useSWR<IPhoto>(
+    `https://jsonplaceholder.typicode.com/photos/${id}`,
+  );
+
+  return {
+    photo: data!, // suspense.
+    isLoading: !error && !data,
+    isError: error,
+  };
+}
