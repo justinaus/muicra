@@ -6,6 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 
+import PhotoModifyPage from './pages/PhotoModifyPage';
 import PhotoPage from './pages/PhotoPage';
 import PhotosPage from './pages/PhotosPage';
 import PostsPage from './pages/PostsPage';
@@ -23,6 +24,9 @@ export default function Routes() {
         </Route>
         <Route path={`${RoutePath.Photos}/:id`}>
           <PhotoPage />
+        </Route>
+        <Route path={`${RoutePath.PhotoModify}/:id`}>
+          <PhotoModifyPage />
         </Route>
         <Redirect to={RoutePath.Posts} />
       </Switch>
