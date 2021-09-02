@@ -8,8 +8,10 @@ import {
   TableRow,
 } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import usePhotos from '../hooks/usePhotos';
+import { RoutePath } from '../utils/enums';
 
 export default function PhotosPage() {
   const { photos } = usePhotos();
@@ -29,7 +31,9 @@ export default function PhotosPage() {
             <TableRow key={item.id} hover>
               <TableCell align="center">{item.id}</TableCell>
               <TableCell align="center">{item.albumId}</TableCell>
-              <TableCell align="center">{item.title}</TableCell>
+              <TableCell align="center">
+                <Link to={`${RoutePath.Photos}/${item.id}`}>{item.title}</Link>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
