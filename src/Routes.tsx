@@ -28,7 +28,7 @@ export default function Routes() {
         <Route path={`${RoutePath.PhotoModify}/:id`}>
           <PhotoModifyPage />
         </Route>
-        <Redirect to={RoutePath.Posts} />
+        <Redirect to={RoutePath.Photos} />
       </Switch>
     </Router>
   );
