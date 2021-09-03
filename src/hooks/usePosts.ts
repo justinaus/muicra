@@ -10,6 +10,6 @@ export default function usePosts() {
   return {
     posts: data!, // suspense.
     isLoading: !error && !data,
-    isError: error,
+    error: error,
   };
 }

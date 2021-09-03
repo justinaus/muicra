@@ -10,6 +10,6 @@ export default function usePhotos() {
   return {
     photos: data!, // suspense.
     isLoading: !error && !data,
-    isError: error,
+    error: error,
   };
 }
