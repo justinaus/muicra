@@ -13,6 +13,7 @@ interface Props extends FormControlProps<'fieldset'> {
   datas: IRadio[];
   selectedId: string | null;
   label?: string;
+  isRow?: boolean;
   onChangeRadio: (
     event: React.ChangeEvent<HTMLInputElement>,
     value: string,
@@ -23,6 +24,7 @@ export default function RadioFormControl({
   datas,
   selectedId,
   label,
+  isRow,
   onChangeRadio,
   ...rest
 }: Props) {
@@ -30,6 +32,7 @@ export default function RadioFormControl({
     <FormControl component="fieldset" {...rest}>
       {label && <FormLabel component="legend">{label}</FormLabel>}
       <RadioGroup
+        row={isRow}
         aria-label="gender"
         name="gender1"
         value={selectedId}
