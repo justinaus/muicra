@@ -5,3 +5,8 @@ export interface IPhoto {
   url: string;
   thumbnailUrl: string;
 }
+
+export interface IPhotoModify {
+  albumId: string;
+  title: string;
+}
