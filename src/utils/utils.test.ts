@@ -37,9 +37,6 @@ describe('utils', () => {
       expect(getIsValidEmail('foobar.com')).toBe(false);
       expect(getIsValidEmail('@bar.com')).toBe(false);
       expect(getIsValidEmail('foo@.com')).toBe(false);
-
-      // WRONG TEST.
-      expect(getIsValidEmail('foo@.com')).toBe(true);
     });
   });
 });
