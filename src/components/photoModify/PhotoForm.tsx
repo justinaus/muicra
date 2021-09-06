@@ -44,6 +44,7 @@ export default function PhotoForm({ initialValues, onClose, onSubmit }: Props) {
             fullWidth
             error={!!errors.albumId && touched.albumId}
             helperText={touched.albumId && errors.albumId}
+            data-cy="albumId"
           />
         </Grid>
         <Grid item>
