@@ -30,7 +30,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "cypress": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "lint": "eslint --ext js,ts,tsx src"
   },
   "eslintConfig": {
     "extends": [
