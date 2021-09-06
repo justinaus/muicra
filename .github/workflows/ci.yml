@@ -20,12 +20,12 @@ jobs:
         
     - name: Install
       run: |
-        npm ci
+        yarn install --frozen-lockfile
         
     - name: Run jest unit tests
       run: |
-        npm test
+        yarn test
 
     - name: Run JS linter
       run: |
-        npm run lint
+        yarn lint
