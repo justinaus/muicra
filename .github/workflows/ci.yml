@@ -20,7 +20,7 @@ jobs:
         
     - name: Install
       run: |
-        npm install
+        npm ci
         
     - name: Run jest unit tests
       run: |
