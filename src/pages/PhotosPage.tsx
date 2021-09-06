@@ -6,6 +6,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -19,6 +20,9 @@ export default function PhotosPage() {
 
   return (
     <Page>
+      <Typography variant="h6" className="mb-4">
+        Photos
+      </Typography>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
