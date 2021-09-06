@@ -1,39 +1,35 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow will install Deno then run Deno lint and test.
-# For more information see: https://github.com/denoland/setup-deno
-
-name: Deno
+name: NodeJS with Webpack
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    
     steps:
-      - name: Setup repo
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        # uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e9833173669
-        with:
-          deno-version: v1.x
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Install
+      run: |
+        npm install
+        
+    - name: Run jest unit tests
+      run: |
+        npm test
 
-      # Uncomment this step to verify the use of 'deno fmt' on each commit.
-      # - name: Verify formatting
-      #   run: deno fmt --check
-
-      - name: Run linter
-        run: deno lint
-
-      - name: Run tests
-        run: deno test -A --unstable
+    - name: Run JS linter
+      run: |
+        npm run lint
