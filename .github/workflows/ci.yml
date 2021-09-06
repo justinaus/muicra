@@ -29,8 +29,3 @@ jobs:
     - name: Run JS linter
       run: |
         yarn lint
-        
-    - name: Run Cypress
-      run: |
-        yarn start
-        yarn cypress
