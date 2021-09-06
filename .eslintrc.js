@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
+    'cypress/globals': true,
   },
   plugins: [
     'prettier',
@@ -11,6 +12,7 @@ module.exports = {
     'unused-imports',
     'simple-import-sort',
     'react-hooks',
+    'cypress',
   ],
   extends: ['prettier', 'react-app', 'plugin:react/recommended'],
   rules: {
