@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import React from 'react';
 import { useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
@@ -20,6 +20,9 @@ export default function PhotoPage() {
 
   return (
     <Page>
+      <Typography variant="h6" className="mb-4">
+        Photo
+      </Typography>
       <div>albumId: {photo.albumId}</div>
       <div>id: {photo.id}</div>
       <div>title: {photo.title}</div>
